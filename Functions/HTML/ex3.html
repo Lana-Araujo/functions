@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCÍCIO 3</title>
+</head>
+<body>
+    <p>Insira uma temperatura em graus Celsius para converter em Kelvin:</p>
+    <input type="number" id="tempCelsius">
+    <button onclick="converterTemperatura()">Converter</button>
+    <p id="resultado"></p>
+
+    <script>
+    function converterTemperatura() {
+        const tempCelsius = document.getElementById("tempCelsius").value;
+        const tempKelvin = parseFloat(tempCelsius) + 273.15;
+        document.getElementById("resultado").textContent = `${tempCelsius} graus Celsius equivalem a ${tempKelvin} Kelvin.`;
+      }
+    </script>
+</body>
+</html>

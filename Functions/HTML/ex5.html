@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCÍCIO 5</title>
+</head>
+<body>
+    <h1>ÁREA E PERÍMETRO DO CÍRCULO</h1>
+      <input type="number" id="raio"placeholder="raio">
+      <button onclick="enviar()"> calcular</button>
+      <p id="resultado"></p>
+
+    <script>
+        function enviar() {
+            const raio =document.getElementById("raio").value;
+            const area=  Math.PI* parseFloat(raio) ** 2;
+            const perimetro = 2 * Math.PI* parseFloat(raio);
+            document.getElementById("resultado").textContent =`A área do círculo é ${area} e seu perímetro é ${perimetro}.`;
+        }
+    </script>
+    
+</body>
+</html>
