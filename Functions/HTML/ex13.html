@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCÍCIO 13</title>
+</head>
+
+<body>
+    <script>
+        function exibirVideo() {
+            const preferencia = prompt("Você gosta de música nacional ou internacional?");
+
+            let videoId;
+            if (preferencia.toLowerCase() === "nacional") {
+                videoId = "oZgYN4qfpl4";
+            } else if (preferencia.toLowerCase() === "internacional") {
+                videoId = "1G4isv_Fylg";
+            } else {
+                alert("Opção inválida! Tente novamente.");
+                return;
+            }
+
+            const iframe = document.createElement("iframe");
+            iframe.src = `https://www.youtube.com/embed/${videoId}`;
+            iframe.width = "560";
+            iframe.height = "315";
+            iframe.allowfullscreen = "allowfullscreen";
+
+            const container = document.getElementById("video-container");
+            container.innerHTML = "";
+            container.appendChild(iframe);
+        }
+    </script>
+
+    <button onclick="exibirVideo()">Exibir vídeo</button>
+
+    <div id="video-container"></div>
+
+</body>
+
+</html>
