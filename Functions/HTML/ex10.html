@@ -11,35 +11,40 @@
 
    
     <script>
-        prompt("Digite 1 para Mário, 2 para Luigi e 3 para Yoshi:")
-        prompt("Digite a quantidade de vezes que você quer que a imagem apareça:")
-   
-        function Quantidade (q){
+      const characters = ["Mario", "Luigi", "Princess Peach"];
 
-        if (escolha == 1){
-            for (let seq = 0; seq<=q; seq++)
-            document.write(mario)
-            console.log(seq)
-            var img = document.createElement("img");
-            img.src = "https://static.wikia.nocookie.net/herois/images/c/c4/MPSS_Mario.webp/revision/latest?cb=20220607201508&path-prefix=pt-br";
-        }
+// Função para perguntar qual personagem o usuário quer ver
+function askCharacter() {
+  let character;
+  do {
+    character = prompt(`Qual personagem do Mario você quer ver? (${characters.join(", ")})`);
+  } while (!characters.includes(character));
+  return character;
+}
 
-        else if(escolha == 2){
-            for (let seq = 0; seq<=q; seq++)
-            document.write(luigi)
-            console.log(seq)
-            var img = document.createElement("img");
-            img.src = "https://static.wikia.nocookie.net/mario/images/7/72/MPSS_Luigi.png/revision/latest?cb=20220705200355";
-        }
+// Função para perguntar quantas vezes o usuário quer ver o personagem escolhido
+function askQuantity() {
+  let quantity;
+  do {
+    quantity = parseInt(prompt("Quantas vezes você quer ver esse personagem na tela?"));
+  } while (isNaN(quantity) || quantity <= 0);
+  return quantity;
+}
 
-        else if(escolha == 3){
-            for (let seq = 0; seq<=q; seq++)
-            document.write(Yoshi)
-            console.log(seq)
-            var img = document.createElement("img");
-            img.src = "https://http2.mlstatic.com/D_NQ_NP_915854-MLB31679945889_082019-O.jpg";
-        }
-    }
+// Função para exibir o personagem escolhido na quantidade solicitada
+function displayCharacter(character, quantity) {
+  const container = document.getElementById("characters");
+  container.innerHTML = ""; // Limpa o container antes de adicionar os personagens
+  for (let i = 0; i < quantity; i++) {
+    const img = document.createElement("img");
+    container.appendChild(img);
+  }
+}
+
+// Chamada das funções em sequência
+const character = askCharacter();
+const quantity = askQuantity();
+displayCharacter(character, quantity);
     </script>
 
 </body>
