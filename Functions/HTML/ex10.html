@@ -7,44 +7,22 @@
     <title>EXERCICIO 10</title>
 </head>
 <body>
-
+ <h5>Escolha um personagem:</h5>
+ <button onclick="mario()">Mário</button>
+    <div id="mario"></div>
+    <button onclick="">Luigi</button>
+    <div id="luigi"></div>
+    <button onclick="">Peach</button>
+    <div id="peach"></div>
 
    
     <script>
-      const characters = ["Mario", "Luigi", "Princess Peach"];
+      function mario() {
+      img.src = "/img/mario.jpg";
+    }
+    
 
-// Função para perguntar qual personagem o usuário quer ver
-function askCharacter() {
-  let character;
-  do {
-    character = prompt(`Qual personagem do Mario você quer ver? (${characters.join(", ")})`);
-  } while (!characters.includes(character));
-  return character;
-}
 
-// Função para perguntar quantas vezes o usuário quer ver o personagem escolhido
-function askQuantity() {
-  let quantity;
-  do {
-    quantity = parseInt(prompt("Quantas vezes você quer ver esse personagem na tela?"));
-  } while (isNaN(quantity) || quantity <= 0);
-  return quantity;
-}
-
-// Função para exibir o personagem escolhido na quantidade solicitada
-function displayCharacter(character, quantity) {
-  const container = document.getElementById("characters");
-  container.innerHTML = ""; // Limpa o container antes de adicionar os personagens
-  for (let i = 0; i < quantity; i++) {
-    const img = document.createElement("img");
-    container.appendChild(img);
-  }
-}
-
-// Chamada das funções em sequência
-const character = askCharacter();
-const quantity = askQuantity();
-displayCharacter(character, quantity);
     </script>
 
 </body>
