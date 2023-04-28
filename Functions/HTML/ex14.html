@@ -25,54 +25,6 @@
           </a>
         </div>
       </div>
-  
-      <!-- Scripts do Bootstrap e do jQuery -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  
-      <script>
-        function escolherImagens() {
-          // Array com as 10 opções de imagens
-          let opcoes = [
-            "/Img/imagem1.jpg",
-            "/Img/imagem2.jpg",
-            "/Img/imagem3.jpg",
-            "/Img/imagem4.jpg",
-            "/Img/imagem5.jpg",
-            "/Img/imagem6.jpg",
-            "/Img/imagem7.jpg",
-            "/Img/imagem8.jpg",
-            "/Img/imagem9.jpg",
-            "/Img/imagem10.jpg"
-          ];
-  
-          let imagensEscolhidas = [];
-  
-          for (let i = 0; i < 5; i++) {
-            let escolha = prompt(`Escolha a ${i+1}ª imagem: ${opcoes.join(", ")}`);
-  
-            // Verifica se a escolha do usuário está entre as opções válidas
-            while (!opcoes.includes(escolha)) {
-              escolha = prompt(`Opção inválida! Escolha a ${i+1}ª imagem: ${opcoes.join(", ")}`);
-            }
-  
-            // Adiciona a imagem escolhida no array
-            imagensEscolhidas.push(escolha);
-  
-            // Remove a imagem escolhida das opções disponíveis
-            opcoes = opcoes.filter(imagem => imagem !== escolha);
-          }
-  
-          // Cria elementos carousel-item para cada imagem escolhida
-          let carouselInner = document.getElementById("imagens-escolhidas");
-  
-          imagensEscolhidas.forEach((imagem, index) => {
-            let carouselItem = document.createElement("div");
-            carouselItem.classList.add("carousel-item");
-          }
-        }
-        </script>
 </body>
 
 </html>

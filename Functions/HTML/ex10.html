@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXERCICIO 10</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXERCICIO 10</title>
 </head>
+
 <body>
- <h5>Escolha um personagem:</h5>
- <button onclick="mario()">Mário</button>
-    <div id="mario"></div>
-    <button onclick="">Luigi</button>
-    <div id="luigi"></div>
-    <button onclick="">Peach</button>
-    <div id="peach"></div>
-
-   
-    <script>
-      function mario() {
-      img.src = "/img/mario.jpg";
-    }
-    
+  <h5>Escolha um personagem:</h5>
+  <button onclick="mario()">Mário</button>
+  <div id="mario"></div>
+  <button onclick="luigi()">Luigi</button>
+  <div id="luigi"></div>
+  <button onclick="peach()">Peach</button>
+  <div id="peach"></div>
 
 
-    </script>
+  <script>
+    function mario() {
+      let quantidadeImagens = prompt("Quantas vezes você quer exibir a imagem?");
+      let img = document.createElement("img");
+      img.src = "..\img\mario.jpg";
+
+      for (let i = 0; i < quantidadeImagens; i++) {
+        document.body.appendChild(img.cloneNode(true))
+      }
+      }
+      function luigi() {
+      let quantidadeImagens = prompt("Quantas vezes você quer exibir a imagem?");
+      let img = document.createElement("img");
+      img.src = "img/luigi.jpg";
+
+      for (let i = 0; i < quantidadeImagens; i++) {
+        document.body.appendChild(img.cloneNode(true))
+      }
+      }
+      function peach() {
+      let quantidadeImagens = prompt("Quantas vezes você quer exibir a imagem?");
+      let img = document.createElement("img");
+      img.src = "img/peach.jpg";
+
+      for (let i = 0; i < quantidadeImagens; i++) {
+        document.body.appendChild(img.cloneNode(true))
+      }
+      }
+
+
+
+  </script>
 
 </body>
+
 </html>
